@@ -24,5 +24,11 @@ print(f"Scanning BLE devices for {timeout} seconds")
 svc = DiscoveryService()
 ble_devs = svc.discover(timeout)
 
+f = open("hw11_miniproj_data.txt", "a")
+
+
 for u, n in ble_devs.items():
     print(u, n)
+    f.write(u, n) 
+ 
+f.close()
